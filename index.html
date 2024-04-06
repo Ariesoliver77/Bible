@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Verse of the Day App</title>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div class="main">
+        <div class="verse-container">
+            <h1>Bible Verse</h1>
+            <p>of the Day</p>
+            <h3 id="dateToday"></h3>
+
+            <blockquote id="verse"></blockquote>
+            <p id="verse-reference"></p>
+
+            <button id="copy-button" onclick="copyVerse()">Copy Quote</button>
+        </div>
+    </div>
+    <script>
+        function copyVerse() {
+            const verseText = verseElement.textContent;
+            const referenceText = verseReferenceElement.textContent;
+            const combinedText = `${verseText}\n${referenceText}`;
+
+            navigator.clipboard.writeText(combinedText)
+                .then(() => alert('Verse copied successfully!'))
+                .catch(err => console.error('Error copying verse: ', err));
+        }
+    </script>
+
+    <!-- Script JS -->
+    <script src="./script.js"></script>
+</body>
+</html>
